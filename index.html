@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <style>
+    /*
+      yellow: #f1c337
+      teal: #15838e
+      light green: #abd9be
+      red: #ee3c2a
+    */
+    .red
+    {
+      color: red;
+    }
+
+    .sorts
+    {
+      margin-bottom: 40px;
+      margin-right: 30px;
+      background-color: #ccc;
+      padding: 10px;
+      width: 150px;
+      float: left;
+    }
+
+    .box
+    {
+      width: 110px;
+      height: 110px;
+      margin: 5px;
+      background-color: #f1c337;
+      float: left;
+      overflow: hidden;
+    }
+
+    .box.c, .box.s, .box.a
+    {
+      width: 110px;
+      height: 110px;
+    }
+
+    .box.cs, .box.ca, .box.sc, .box.sa, .box.ac, .box.as
+    {
+      width: 110px;
+      height: 230px;
+    }
+
+    .box.csa
+    {
+      width: 230px;
+      height: 230px;
+    }
+
+    .NFP
+    {
+      background-color: #abd9be;
+    }
+
+    .FP
+    {
+      background-color: #15838e;
+    }
+
+    .name
+    {
+      font-size: 14px;
+    }
+
+    .description
+    {
+      font-size: 12px;
+      font-style: italic;
+    }
+
+    .isotope-item {
+      z-index: 2;
+    }
+
+    .selected {
+      background-color: yellow;
+    }
+      
+    .isotope-hidden.isotope-item {
+      pointer-events: none;
+      z-index: 1;
+    }
+      
+    .isotope,
+    .isotope .isotope-item {
+    -webkit-transition-duration: 0.8s;
+       -moz-transition-duration: 0.8s;
+            transition-duration: 0.8s;
+    }
+      
+    .isotope {
+    -webkit-transition-property: height, width;
+       -moz-transition-property: height, width;
+            transition-property: height, width;
+    }
+      
+    .isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+       -moz-transition-property:    -moz-transform, opacity;
+            transition-property:         transform, opacity;
+    }
+
+    .option-combo
+    {
+/*      width: 150px;
+      float: left;*/
+    }
+
+  </style>
+</head>
+<body>
+  <h1>EduPunks</h1>
+  <div class="sorts">
+    <div id="filter_by">
+      <div class="option-combo color">
+        <h4>Course Type</h4>
+        <ul class="filter option-set clearfix " data-filter-group="type">
+          <li><a href="#filter-type-any" data-filter-value="" class="selected">any</a></li>
+          <li><a href="#filter-type-online" data-filter-value=".online">online</a></li>
+          <li><a href="#filter-type-offline" data-filter-value=".offline">offline</a></li>
+          <li><a href="#filter-type-hybrid" data-filter-value=".hybrid">hybrid</a></li>
+        </ul>
+      </div>
+
+    <div class="option-combo size">
+      <h4>Business Model</h4>
+      <ul class="filter option-set clearfix " data-filter-group="size">
+        <li><a href="#filter-biz-any" data-filter-value="" class="selected">any</a></li>
+        <li><a href="#filter-biz-NFP" data-filter-value=".NFP">not for profit</a></li>
+        <li><a href="#filter-biz-FP" data-filter-value=".FP">for profit</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="sort_by">
+    <div class="option-set clearfix" data-option-key="sortBy">
+      <h4>Sort by</h4>
+        <ul id="sort-by">
+          <li><a href="#sortBy=name" data-option-value="name">name</a></li>
+          <li><a href="#sortBy=level" data-option-value="level" class="selected">level</a></li>
+        </ul>
+    </div>
+  </div>
+
+    <div class="instructions">
+      <h3>Edupunks’ Atlas of Lifelong Learning</h3>
+      <p><strong>what it is</strong></p>
+      <p>a searchable, sortable map and table of the outer limits of higher education in the 2010s.</p>
+      <p><strong>how it works</strong></p>
+      each organization in the map is listed by name, URL, and online/offline/hybrid. They are sortable by the following attributes
+      Cost to student
+      Benefit Mix
+      higher education organizations in the age of unbundling can provide content, socialization, assessment, any two or all three of the above.
+      The SIZE of each square reflects the benefit mix it offers.
+      e.g.; Content-Socialization-Accreditation (ASU Online); Content (Open Courseware); Content-Socialization (MOOC); Socialization (OpenStudy, CityYear); Socialization-Accreditation (Github); Accreditation (LearningCounts.org).
+      Business model
+      Business models vary widely. The color represents the business model on a scale of green (for-profit/profit-driven) to blue (nonprofit/mission-driven). Gradations in between will be represented by a mix of the two colors. e.g.; Nonprofit-within existing university, Nonprofit-state-funded, Nonprofit-mixed, For-profit-publicly traded, For-profit-venture, Nonprofit-venture.
+      Audience
+      The intended or potential audience for an innovation can be very narrow or very broad. It’s represented here by a single number (1-Elite to 10-Mass.) For example, Dev Bootcamp, a startup that costs thousands of dollars and is directed at Silicon Valley computer scientists with Bachelor’s or Advanced degrees, would rate a 1, while Khan Academy, accessible to elementary school students for free, would rate a 10.
+      Traditional-Experimental
+      Rated on a scale of 1 to 4.
+      Got updates?
+      Email us at Diyubook@gmail.com.
+
+  </div>
+
+
+  </div> <!--  END SORTS  -->
+
+
+  <div id="list">
+
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/jsoma/tabletop/master/src/tabletop.js"></script>
+  <script src="js/jquery.isotope.min.js"></script>
+
+  <script type="text/javascript">
+
+    var courses
+
+    window.onload = function() { init() };
+
+    var public_spreadsheet_url = "https://docs.google.com/spreadsheet/pub?key=0ApL2ZVhpOmONdFdrY3QzNkx3eWU5Z2F3cmJLUUJEQ1E&output=html";
+
+  function init() {
+      Tabletop.init( { key: public_spreadsheet_url,
+                       callback: showInfo,
+                       simpleSheet: true } )
+    }
+
+    function showInfo(data, tabletop) {
+      for (var i = 0; i < data.length; i++)
+        {
+          courses = data
+            $("#list").append("<div class=\"box isotope-item " + courses[i].csa + " " + courses[i].biz + " " + courses[i].type + "\">" +
+                                "<div class= \"type " + courses[i].type + "\">" + courses[i].type + "</div>" +
+                                "<div class = \"level " + courses[i].level + "\">" + courses[i].level + "</div>" +
+                                "<div class='name'> <a href='" + courses[i].url + "' target=?blank>" + courses[i].name + "</a> </div>" +
+                                "<div class='description'> <p>" + courses[i].description + "</p> </div>" +
+                                "<div class=\"threes\">" + courses[i].csa + "</div>" +
+                                "<div class=\"hidden" + courses[i].risk + "</div>" +
+                              "</div>"
+                              );
+        }
+
+    var $container = $('#list'),
+    filters = {};
+
+    //this is the sorts section ///////////////////////////////////////////////////////////////////////////
+    $container.isotope({
+      itemSelector : '.box',
+      getSortData : {
+        name : function ( $elem ) {
+          return $elem.find('.name').text();
+        }
+        ,
+        // level : function ( $elem ) {
+        //   return parseInt( $elem.find('.level').text(), 10 );
+        // },
+      }
+    });
+
+    var $optionSets = $('#sort_by .option-set'),
+        $optionLinks = $optionSets.find('a');
+
+    $optionLinks.click(function(){
+      var $this = $(this);
+      // don't proceed if already selected
+      if ( $this.hasClass('selected') ) {
+        return false;
+      }
+      var $optionSet = $this.parents('.option-set');
+      $optionSet.find('.selected').removeClass('selected');
+      $this.addClass('selected');
+
+      // make option object dynamically, i.e. { filter: '.my-filter-class' }
+      var options = {},
+          key = $optionSet.attr('data-option-key'),
+          value = $this.attr('data-option-value');
+      // parse 'false' as false boolean
+      value = value === 'false' ? false : value;
+      options[ key ] = value;
+      if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+        // changes in layout modes need extra logic
+        changeLayoutMode( $this, options )
+      } else {
+        // otherwise, apply new options
+        $container.isotope( options );
+      }
+
+      return false;
+    });
+
+    // filter buttons
+    $('.filter a').click(function(){
+      var $this = $(this);
+      // don't proceed if already selected
+      if ( $this.hasClass('selected') ) {
+        return;
+      }
+
+      var $optionSet = $this.parents('#filter_by .option-set');
+      // change selected class
+      $optionSet.find('.selected').removeClass('selected');
+      $this.addClass('selected');
+
+      // store filter value in object
+      // i.e. filters.color = 'red'
+      var group = $optionSet.attr('data-filter-group');
+      filters[ group ] = $this.attr('data-filter-value');
+      // convert object into array
+      var isoFilters = [];
+      for ( var prop in filters ) {
+        isoFilters.push( filters[ prop ] )
+      }
+      var selector = isoFilters.join('');
+      $container.isotope({ filter: selector });
+
+      return false;
+    });
+
+  }
+
+
+
+  </script>
+
+</body>
+</html>

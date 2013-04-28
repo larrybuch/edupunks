@@ -1,9 +1,47 @@
- /*
-      yellow: #f1c337
-      teal: #15838e
-      light green: #abd9be
+  /*
+      yellow: #fcb538
+      teal: #05aab7
+      light green: #8ac23f
       red: #ee3c2a
     */
+    
+    
+    body { font-family: arial, helvetica, sans-serif; }
+    
+    header { height: 140px; }
+    
+    header .title { float: left; padding-left: 40px; padding-top: 20px; }
+    
+    header .title .the { font-size: 20px; color: #fcb538; height: 20px; }
+    
+    header .title h1 { 
+    	height: 60px;
+    	font-size: 60px; 
+    	color: #05aab7; 
+    	margin: 0; }
+        
+    header .option-set { float: right; padding-top: 50px; }
+    
+    header .option-set ul { list-style: none; }
+    
+    header .option-set ul li { float: left; margin-right: 20px; }
+
+    header .option-set ul li.label { color: #8ac23f; font-weight: bold; padding: 10px 0px; }
+    
+    header .option-set ul li a { 
+    	display: block;
+    	padding: 10px 20px;
+    	margin: 0px;
+    	text-decoration: none; 
+    	color: #727272 
+    }
+    
+    header .option-set ul li a:hover { background-color: #e4f5f5; } 
+    
+    header .option-set ul li a.selected { color: white; } 
+    
+    header .option-set ul li a.selected:hover { color: #727272; } 
+    
     .red
     {
       color: red;
@@ -12,58 +50,128 @@
     .sorts
     {
       margin-bottom: 40px;
-      margin-right: 30px;
-      background-color: #ccc;
+      margin: 0 20px 40px 20px;
       padding: 10px;
-      width: 150px;
+      width: 210px;
       float: left;
     }
+    
+    .sorts h4 { margin-top: 0px; margin-bottom: 10px; color: #8ac23f }
+    
+    .sorts ul { padding: 0px 0px 20px 0; }
+    
+    .sorts ul li { 
+    	list-style: none; 
+    	margin: 0px;
+    }
+    
+    .sorts ul li a { 
+    	display: block;
+    	width: 190px;
+    	padding: 10px 0 10px 20px;
+    	margin: 0px;
+    	text-decoration: none; 
+    	color: #727272 
+    }
+    
+    .sorts ul li a:hover { background-color: #e4f5f5; } 
+    
+    .sorts ul li a.selected { color: white; } 
+    
+    .sorts ul li a.selected:hover { color: #727272; } 
 
     .box
     {
-      width: 110px;
-      height: 110px;
+      width: 90px;
+      height: 90px;
+      padding: 10px;
       margin: 5px;
-      background-color: #f1c337;
+      background-color: #fcb538;
       float: left;
+      border-radius: 0 20px 0 0;
       overflow: hidden;
     }
 
     .box.c, .box.s, .box.a
     {
-      width: 110px;
-      height: 110px;
+      width: 90px;
+      height: 90px;
     }
 
     .box.cs, .box.ca, .box.sc, .box.sa, .box.ac, .box.as
     {
-      width: 110px;
-      height: 230px;
+      width: 90px;
+      height: 210px;
     }
 
     .box.csa
     {
-      width: 230px;
-      height: 230px;
+      width: 210px;
+      height: 210px;
     }
+    
+    .box.csa .abbreviation { font-size: 80px; height: 80px; }
 
     .NFP
     {
-      background-color: #abd9be;
+      background-color: #8ac23f;
     }
 
     .FP
     {
-      background-color: #15838e;
+      background-color: #05aab7;
     }
 
-    .name
+    .abbreviation
     {
-      font-size: 14px;
+      font-size: 40px;
+      height: 40px;
+      padding-bottom: 5px;
+      font-weight: bold;
+      color: white;
+    }
+    
+    .abbreviation p { margin-top: 15px; }
+
+    .name { line-height: 13px; }
+
+    .name a
+    {
+      font-size: 12px;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+    }
+    
+    .level {
+    	font-size: 20px;
+    	height: 10px;
+    	font-weight: bold;
+    	color:rgba(0,0,0,0.25);
+    	float: right;    
+    }
+    	
+    .threes { 
+    	padding: 5px;
+    	position: absolute;
+    	right: 0px;
+    	bottom: 0px;
+    	text-transform: uppercase;
+    	font-size: 10px;
+    	
+    }	
+    	
+    .type {
+    	font-size: 10px;
+    	display: block;
+    	float: left; 
+    	text-transform: uppercase;
+    	letter-spacing: 1px;   
     }
 
     .description
     {
+      display: none;
       font-size: 12px;
       font-style: italic;
     }
@@ -72,9 +180,9 @@
       z-index: 2;
     }
 
-    .selected {
-      background-color: yellow;
-    }
+    .selected { background-color: #05aab7; }
+
+    .selected a { color: white; }
       
     .isotope-hidden.isotope-item {
       pointer-events: none;

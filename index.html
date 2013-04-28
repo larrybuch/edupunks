@@ -6,7 +6,25 @@
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <h1>EduPunks</h1>
+  <header>
+  	<div class="title">
+  		<div class="the">The</div>  		
+  		<h1>EduPunks' <span style="color:#fcb538;">Atlas</span></h1>
+  		of lifelong learning
+  	</div>
+  	
+  <div id="sort_by">
+    <div class="option-set clearfix" data-option-key="sortBy">
+        <ul id="sort-by">
+          <li class="label">Sort by:</li>
+          <li><a href="#sortBy=name" data-option-value="name">name</a></li>
+          <li><a href="#sortBy=level" data-option-value="level" class="selected">level</a></li>
+        </ul>
+    </div>
+  </div>
+  	
+  </header>
+  
   <div class="sorts">
     <div id="filter_by">
       <div class="option-combo color">
@@ -28,17 +46,6 @@
       </ul>
     </div>
   </div>
-
-  <div id="sort_by">
-    <div class="option-set clearfix" data-option-key="sortBy">
-      <h4>Sort by</h4>
-        <ul id="sort-by">
-          <li><a href="#sortBy=name" data-option-value="name">name</a></li>
-          <li><a href="#sortBy=level" data-option-value="level" class="selected">level</a></li>
-        </ul>
-    </div>
-  </div>
-
     <div class="instructions">
       <h3>Edupunks’ Atlas of Lifelong Learning</h3>
       <p><strong>what it is</strong></p>
@@ -94,6 +101,7 @@
             $("#list").append("<div class=\"box isotope-item " + courses[i].csa + " " + courses[i].biz + " " + courses[i].type + "\">" +
                                 "<div class= \"type " + courses[i].type + "\">" + courses[i].type + "</div>" +
                                 "<div class = \"level " + courses[i].level + "\">" + courses[i].level + "</div>" +
+                                "<div class='abbreviation'> <p>" + courses[i].abbreviation + "</p> </div>" +
                                 "<div class='name'> <a href='" + courses[i].url + "' target=?blank>" + courses[i].name + "</a> </div>" +
                                 "<div class='description'> <p>" + courses[i].description + "</p> </div>" +
                                 "<div class=\"threes\">" + courses[i].csa + "</div>" +

@@ -8,9 +8,16 @@
     
     body { font-family: arial, helvetica, sans-serif; }
     
-    header { height: 140px; }
+    header { 
+    	margin: 20px 40px;
+    	height: 160px; 
+    	background-image:url('../images/key.png');
+    	background-repeat:no-repeat;
+    	background-position:right 10px;
+    	border-bottom: 1px solid #727272;
+    }
     
-    header .title { float: left; padding-left: 40px; padding-top: 20px; }
+    header .title { float: left; padding-top: 20px; }
     
     header .title .the { font-size: 20px; color: #fcb538; height: 20px; }
     
@@ -19,28 +26,8 @@
     	font-size: 60px; 
     	color: #05aab7; 
     	margin: 0; }
-        
-    header .option-set { float: right; padding-top: 50px; }
-    
-    header .option-set ul { list-style: none; }
-    
-    header .option-set ul li { float: left; margin-right: 20px; }
-
-    header .option-set ul li.label { color: #8ac23f; font-weight: bold; padding: 10px 0px; }
-    
-    header .option-set ul li a { 
-    	display: block;
-    	padding: 10px 20px;
-    	margin: 0px;
-    	text-decoration: none; 
-    	color: #727272 
-    }
-    
-    header .option-set ul li a:hover { background-color: #e4f5f5; } 
-    
-    header .option-set ul li a.selected { color: white; } 
-    
-    header .option-set ul li a.selected:hover { color: #727272; } 
+    	
+    header .subtitle { color: #727272; padding-top: 5px; font-size: 24px; }
     
     .red
     {
@@ -71,7 +58,7 @@
     	padding: 10px 0 10px 20px;
     	margin: 0px;
     	text-decoration: none; 
-    	color: #727272 
+    	color: #727272;
     }
     
     .sorts ul li a:hover { background-color: #e4f5f5; } 
@@ -79,6 +66,8 @@
     .sorts ul li a.selected { color: white; } 
     
     .sorts ul li a.selected:hover { color: #727272; } 
+
+    .instructions a { color: #05aab7; text-decoration: none;}
 
     .box
     {

@@ -1,88 +1,45 @@
 var courses;
+window.onload = function() { init(); };
 var public_spreadsheet_url = "https://docs.google.com/spreadsheet/pub?key=0ApL2ZVhpOmONdFdrY3QzNkx3eWU5Z2F3cmJLUUJEQ1E&output=html";
 
-$(function(){
-  init();
-  /* 
-  below was the only code in custom.js, but wasn't being called in the 
-  DOM, so commented out here incase its unwanted.
-  
-  var $container = $('.portfolio');
-
-  $container.isotope({
-    filter: '*',
-    animationOptions: {
-      duration: 750,
-      easing: 'linear',
-      queue: false
-    }
-  });
-
-  $('nav.primary ul a').click(function(){
-    var selector = $(this).attr('data-filter');
-    $container.isotope({
-      filter: selector,
-      animationOptions: {
-        duration: 750,
-        easing: 'linear',
-        queue: false
-      }
-    });
-    return false;
-  });
-  */
-
-});
-
 function init() {
-  Tabletop.init({
-    key: public_spreadsheet_url,
-    callback: showInfo,
-    simpleSheet: true
-  });
-}
-
-function showInfo(data, tabletop) {
-  for (var i = 0; i < data.length; i++) {
-      courses = data;
-      $("#list").append("<div class=\"box isotope-item " + courses[i].csa + " " + courses[i].biz + " " + courses[i].type + "\">" +
-        "<div class= \"type " + courses[i].type + "\">" + courses[i].type + "</div>" +
-        "<div class = \"level " + courses[i].level + "\">" + courses[i].level + "</div>" +
-        "<div class='name'> <a href='" + courses[i].url + "' target=?blank>" + courses[i].name + "</a> </div>" +
-        "<div class='description hidden'> <p>" + courses[i].description + "</p> </div>" +
-        "<div class=\"threes\">" + courses[i].csa + "</div>" +
-        "<div class=\"hidden" + courses[i].risk + "</div>" +
-        "</div>"
-      );
+    Tabletop.init( { key: public_spreadsheet_url,
+                     callback: showInfo,
+                     simpleSheet: true } );
   }
 
-  /* 
-  on mousover, show the description. the function is listed here
-  because the isotope boxes need to be present on the page already
-  to have the mouseover event bounded to them. could be a better way 
-  to do this
-  */
-  $('.box').mouseover(showDesc);
+  function showInfo(data, tabletop) {
+    for (var i = 0; i < data.length; i++)
+      {
+        courses = data;
+          $("#list").append("<div class=\"box isotope-item " + courses[i].csa + " " + courses[i].biz + " " + courses[i].type + "\">" +
+                              "<div class= \"type " + courses[i].type + "\">" + courses[i].type + "</div>" +
+                              "<div class = \"level " + courses[i].level + "\">" + courses[i].level + "</div>" +
+                              "<div class='abbreviation'> <p>" + courses[i].abbreviation + "</p> </div>" +
+                              "<div class='name'> <a href='" + courses[i].url + "' target=?blank>" + courses[i].name + "</a> </div>" +
+                              "<div class='description'> <p>" + courses[i].description + "</p> </div>" +
+                              "<div class=\"threes\">" + courses[i].csa + "</div>" +
+                              "<div class=\"hidden" + courses[i].risk + "</div>" +
+                            "</div>"
+                            );
+      }
 
-  var $container = $('#list');
+
+  var $container = $('#list'),
   filters = {};
 
   //this is the sorts section ///////////////////////////////////////////////////////////////////////////
   $container.isotope({
     itemSelector : '.box',
     getSortData : {
-      name : function($elem){
+      name : function ( $elem ) {
         return $elem.find('.name').text();
       }
-      // ,
-      // level : function ( $elem ) {
-      //   return parseInt( $elem.find('.level').text(), 10 );
-      // },
     }
   });
 
-  var $optionSets = $('#sort_by .option-set');
-  $optionLinks = $optionSets.find('a');
+  var $optionSets = $('#sort_by .option-set'),
+      $optionLinks = $optionSets.find('a');
 
   $optionLinks.click(function(){
     var $this = $(this);
@@ -140,9 +97,4 @@ function showInfo(data, tabletop) {
     return false;
   });
 
-} // end of showInfo
-
-function showDesc(){
-  $('.visible').removeClass('visible').addClass('hidden');
-  $(this).children('.description').removeClass('hidden').addClass('visible');
 }

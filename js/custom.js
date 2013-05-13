@@ -49,11 +49,10 @@ function showInfo(data, tabletop) {
         "<div class= \"type " + courses[i].type + "\">" + courses[i].type + "</div>" +
         "<div class = \"level " + courses[i].level + "\">" + courses[i].level + "</div>" +
         "<div class='name'> <a href='" + courses[i].url + "' target=?blank>" + courses[i].name + "</a> </div>" +
-        "<div class='description hidden'> <p>" + courses[i].description + "</p> </div>" +
         "<div class=\"threes\">" + courses[i].csa + "</div>" +
         "<div class=\"hidden" + courses[i].risk + "</div>" +
         "</div>"
-      );
+      ).append("<div class='description'> <p>" + courses[i].description + "</p> </div>");
   }
 
   /* 
@@ -73,11 +72,10 @@ function showInfo(data, tabletop) {
     getSortData : {
       name : function($elem){
         return $elem.find('.name').text();
+      },
+      level : function($elem){
+        return parseInt($elem.find('.level').text(), 10);
       }
-      // ,
-      // level : function ( $elem ) {
-      //   return parseInt( $elem.find('.level').text(), 10 );
-      // },
     }
   });
 
@@ -143,6 +141,6 @@ function showInfo(data, tabletop) {
 } // end of showInfo
 
 function showDesc(){
-  $('.visible').removeClass('visible').addClass('hidden');
-  $(this).children('.description').removeClass('hidden').addClass('visible');
+  $('.visible').removeClass('visible');
+  $(this).next('.description').addClass('visible');
 }

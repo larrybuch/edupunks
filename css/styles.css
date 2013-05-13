@@ -87,8 +87,6 @@
       display: none;
       font-size: 12px;
       font-style: italic;
-      position: absolute;
-      z-index: 99;
       background: #05aab7;
       color: white;
       padding: 0.5rem 1rem;

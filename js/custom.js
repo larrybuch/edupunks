@@ -45,14 +45,14 @@ function init() {
 function showInfo(data, tabletop) {
   for (var i = 0; i < data.length; i++) {
       courses = data;
-      $("#list").append("<div class=\"box isotope-item " + courses[i].csa + " " + courses[i].biz + " " + courses[i].type + "\">" +
+      $("#list").append("<div class=\"box isotope-item " + courses[i].csa + " " + courses[i].biz + " " + courses[i].type + "\"" + " title=\"" + courses[i].description + "\">" +
         "<div class= \"type " + courses[i].type + "\">" + courses[i].type + "</div>" +
         "<div class = \"level " + courses[i].level + "\">" + courses[i].level + "</div>" +
         "<div class='name'> <a href='" + courses[i].url + "' target=?blank>" + courses[i].name + "</a> </div>" +
         "<div class=\"threes\">" + courses[i].csa + "</div>" +
         "<div class=\"hidden" + courses[i].risk + "</div>" +
         "</div>"
-      ).append("<div class='description'> <p>" + courses[i].description + "</p> </div>");
+      );
   }
 
   /* 
@@ -61,7 +61,7 @@ function showInfo(data, tabletop) {
   to have the mouseover event bounded to them. could be a better way 
   to do this
   */
-  $('.box').mouseover(showDesc);
+  $('.box').tooltipster();
 
   var $container = $('#list');
   filters = {};
@@ -142,5 +142,5 @@ function showInfo(data, tabletop) {
 
 function showDesc(){
   $('.visible').removeClass('visible');
-  $(this).next('.description').addClass('visible');
+  $(this).children('.description').addClass('visible');
 }

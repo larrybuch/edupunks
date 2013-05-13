@@ -4,31 +4,35 @@
       light green: #8ac23f
       red: #ee3c2a
     */
-    
-    
+
+
     body { font-family: arial, helvetica, sans-serif; }
-    
-    header { 
+
+    header {
     	margin: 20px 40px;
-    	height: 160px; 
+    	height: 170px;
     	background-image:url('../images/key.png');
     	background-repeat:no-repeat;
     	background-position:right 10px;
     	border-bottom: 1px solid #727272;
     }
-    
+
+    .clear{
+      clear: both;
+    }
+
     header .title { float: left; padding-top: 20px; }
-    
+
     header .title .the { font-size: 20px; color: #fcb538; height: 20px; }
-    
-    header .title h1 { 
+
+    header .title h1 {
     	height: 60px;
-    	font-size: 60px; 
-    	color: #05aab7; 
+    	font-size: 60px;
+    	color: #05aab7;
     	margin: 0; }
-    	
+
     header .subtitle { color: #727272; padding-top: 5px; font-size: 24px; }
-    
+
     .red
     {
       color: red;
@@ -42,30 +46,30 @@
       width: 210px;
       float: left;
     }
-    
-    .sorts h4 { margin-top: 0px; margin-bottom: 10px; color: #8ac23f }
-    
-    .sorts ul { padding: 0px 0px 20px 0; }
-    
-    .sorts ul li { 
-    	list-style: none; 
+
+    .sorts h4 { margin-top: 0; margin-bottom: 10px; color: #8ac23f }
+
+    .sorts ul { padding: 0 0 20px 0; }
+
+    .sorts ul li {
+    	list-style: none;
     	margin: 0px;
     }
-    
-    .sorts ul li a { 
+
+    .sorts ul li a {
     	display: block;
     	width: 190px;
     	padding: 10px 0 10px 20px;
-    	margin: 0px;
-    	text-decoration: none; 
+    	margin: 0;
+    	text-decoration: none;
     	color: #727272;
     }
-    
-    .sorts ul li a:hover { background-color: #e4f5f5; } 
-    
-    .sorts ul li a.selected { color: white; } 
-    
-    .sorts ul li a.selected:hover { color: #727272; } 
+
+    .sorts ul li a:hover { background-color: #e4f5f5; }
+
+    .sorts ul li a.selected { color: white; }
+
+    .sorts ul li a.selected:hover { color: #727272; }
 
     .instructions a { color: #05aab7; text-decoration: none;}
 
@@ -79,6 +83,10 @@
       float: left;
       border-radius: 0 20px 0 0;
       overflow: hidden;
+    }
+
+    .box:hover{
+      background-color: #ccc;
     }
 
     .box.c, .box.s, .box.a
@@ -98,7 +106,7 @@
       width: 210px;
       height: 210px;
     }
-    
+
     .box.csa .abbreviation { font-size: 80px; height: 80px; }
 
     .NFP
@@ -119,7 +127,7 @@
       font-weight: bold;
       color: white;
     }
-    
+
     .abbreviation p { margin-top: 15px; }
 
     .name { line-height: 13px; }
@@ -131,31 +139,31 @@
       color: black;
       text-decoration: none;
     }
-    
+
     .level {
     	font-size: 20px;
     	height: 10px;
     	font-weight: bold;
     	color:rgba(0,0,0,0.25);
-    	float: right;    
+    	float: right;
     }
-    	
-    .threes { 
+
+    .threes {
     	padding: 5px;
     	position: absolute;
     	right: 0px;
     	bottom: 0px;
     	text-transform: uppercase;
     	font-size: 10px;
-    	
-    }	
-    	
+
+    }
+
     .type {
     	font-size: 10px;
     	display: block;
-    	float: left; 
+    	float: left;
     	text-transform: uppercase;
-    	letter-spacing: 1px;   
+    	letter-spacing: 1px;
     }
 
     .description

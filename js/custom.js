@@ -3,6 +3,7 @@ window.onload = function() { init(); };
 var public_spreadsheet_url = "https://docs.google.com/spreadsheet/pub?key=0ApL2ZVhpOmONdFdrY3QzNkx3eWU5Z2F3cmJLUUJEQ1E&output=html";
 
 function init() {
+<<<<<<< HEAD
     Tabletop.init( { key: public_spreadsheet_url,
                      callback: showInfo,
                      simpleSheet: true } );
@@ -24,6 +25,35 @@ function init() {
                             );
       }
 
+=======
+  Tabletop.init({
+    key: public_spreadsheet_url,
+    callback: showInfo,
+    simpleSheet: true
+  });
+}
+
+function showInfo(data, tabletop) {
+  for (var i = 0; i < data.length; i++) {
+      courses = data;
+      $("#list").append("<div class=\"box isotope-item " + courses[i].csa + " " + courses[i].biz + " " + courses[i].type + "\"" + " title=\"" + courses[i].description + "\">" +
+        "<div class= \"type " + courses[i].type + "\">" + courses[i].type + "</div>" +
+        "<div class = \"level " + courses[i].level + "\">" + courses[i].level + "</div>" +
+        "<div class='name'> <a href='" + courses[i].url + "' target=?blank>" + courses[i].name + "</a> </div>" +
+        "<div class=\"threes\">" + courses[i].csa + "</div>" +
+        "<div class=\"hidden" + courses[i].risk + "</div>" +
+        "</div>"
+      );
+  }
+
+  /* 
+  on mousover, show the description. the function is listed here
+  because the isotope boxes need to be present on the page already
+  to have the mouseover event bounded to them. could be a better way 
+  to do this
+  */
+  $('.box').tooltipster();
+>>>>>>> 45937a9e3dc43b8724e9753b2fca018f9915e3a6
 
   var $container = $('#list'),
   filters = {};
@@ -34,6 +64,9 @@ function init() {
     getSortData : {
       name : function ( $elem ) {
         return $elem.find('.name').text();
+      },
+      level : function($elem){
+        return parseInt($elem.find('.level').text(), 10);
       }
     }
   });
@@ -97,4 +130,12 @@ function init() {
     return false;
   });
 
+<<<<<<< HEAD
+=======
+} // end of showInfo
+
+function showDesc(){
+  $('.visible').removeClass('visible');
+  $(this).children('.description').addClass('visible');
+>>>>>>> 45937a9e3dc43b8724e9753b2fca018f9915e3a6
 }

@@ -83,6 +83,18 @@
       float: left;
       border-radius: 0 20px 0 0;
       overflow: hidden;
+      position: relative;
+    }
+
+    .description
+    {
+      display: none;
+      font-size: 12px;
+      font-style: italic;
+      background: #05aab7;
+      color: white;
+      padding: 0.5rem 1rem;
+      min-width: 200px;
     }
 
     .box:hover{
@@ -166,13 +178,6 @@
     	letter-spacing: 1px;
     }
 
-    .description
-    {
-      display: none;
-      font-size: 12px;
-      font-style: italic;
-    }
-
     .isotope-item {
       z-index: 2;
     }
@@ -205,8 +210,11 @@
             transition-property:         transform, opacity;
     }
 
-    .option-combo
-    {
+    .option-combo{
 /*      width: 150px;
       float: left;*/
+    }
+
+    .visible {
+      display: block;
     }

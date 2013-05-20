@@ -113,3 +113,9 @@ function showDesc(){
   $('.visible').removeClass('visible');
   $(this).children('.description').addClass('visible');
 }
+
+$(function() {
+   $( "#accordion" ).accordion();
+ });
+
+

@@ -11,20 +11,15 @@
   <header>
   	<div class="title">
   		<div class="the">The</div>
-  		<h1>EduPunks' <span style="color:#fcb538;">Atlas</span></h1>
+  		<h1>EduPunks&#8217; <span style="color:#fcb538;">Atlas</span></h1>
   		<div class="subtitle">of lifelong learning</div>
   	</div>
-  	
-  	<div class="sort_by" id="sort_by">
-  <div class="option-set clearfix" data-option-key="sortBy">
-      <ul id="sort-by">
-      	<li class="title">Sort by:</li>
-        <li><a href="#sortBy=name" data-option-value="name">name</a></li>
-        <li><a href="#sortBy=level" data-option-value="level" class="selected">level</a></li>
-      </ul>
-  </div>
-</div>
-  	
+
+    <div class="what">
+      <p><span class="what_head">What's this?</span> Mapping education's evolving landscape. Lorem ipsum dolor met dolor sit amit quam.</p>
+      <a href="about.html">Learn More</a>
+    </div>
+
     <div class="clear"></div>
 
   </header>
@@ -32,10 +27,17 @@
 
 
   <div class="sorts">
-    <div class="what">
-    	<p>Mapping education's evolving landscape. Lorem ipsum dolor met.</p>
-    	<a href="about.html">Learn More</a>
+
+    <div id="sort_by">
+      <div class="option-set" data-option-key="sortBy">
+        <h4>Sort by</h4>
+        <ul id="sort-by">
+          <li><a href="#sortBy=level" data-option-value="level" class="selected">level</a></li>
+          <li><a href="#sortBy=name" data-option-value="name">name</a></li>
+        </ul>
+      </div>
     </div>
+
     <div id="filter_by">
       <div class="option-combo color">
         <h4>Course Type</h4>
@@ -47,22 +49,20 @@
         </ul>
       </div>
 
-    <div class="option-combo size">
-      <h4>Business Model</h4>
-      <ul class="filter option-set clearfix " data-filter-group="size">
-        <li><a href="#filter-biz-any" data-filter-value="" class="selected">any</a></li>
-        <li><a href="#filter-biz-NFP" data-filter-value=".NFP">not for profit</a></li>
-        <li><a href="#filter-biz-FP" data-filter-value=".FP">for profit</a></li>
-      </ul>
+      <div class="option-combo size">
+        <h4>Business Model</h4>
+        <ul class="filter option-set clearfix " data-filter-group="size">
+          <li><a href="#filter-biz-any" data-filter-value="" class="selected">any</a></li>
+          <li><a href="#filter-biz-NFP" data-filter-value=".NFP">not for profit</a></li>
+          <li><a href="#filter-biz-FP" data-filter-value=".FP">for profit</a></li>
+        </ul>
+      </div>
     </div>
-    
-  </div>
+
     <div class="instructions">
       <h4>Got updates?</h4>
       <a href="mailto:Diyubook@gmail.com"> Email us at Diyubook@gmail.com.</a>
-
-  </div>
-
+    </div>
 
   </div> <!--  END SORTS  -->
 
@@ -72,9 +72,10 @@
   </div>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type="text/javascript" src="https://raw.github.com/jsoma/tabletop/master/src/tabletop.js"></script>
+  <script type="text/javascript" src="js/tabletop.js"></script>
   <script src="js/jquery.isotope.min.js"></script>
   <script src="js/jquery.tooltipster.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="js/custom.js"></script>
 
 </body>

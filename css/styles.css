@@ -13,14 +13,13 @@
     	height: 150px;
     	background-repeat:no-repeat;
     	background-position:right 10px;
-    	border-bottom: 1px solid #727272;
     }
 
     .clear{
       clear: both;
     }
 
-    header .title { float: left; padding-top: 20px; }
+    header .title { float: left; padding-top: 20px; margin-right: 50px ; }
 
     header .title .the { font-size: 20px; color: #fcb538; height: 20px; }
 
@@ -38,8 +37,6 @@
     }
 
     .sort_by {
-      margin-top: 85px;
-      float: right;
     }
 
     .sort_by ul { padding: 0 0 20px 0; float: right; }
@@ -52,11 +49,11 @@
     	padding: 0;
     }
 
-    .sort_by ul li.title { 
+    .sort_by ul li.title {
     	color: #8ac23f;
     	font-weight: bold;
 }
-    
+
     .sort_by ul li a {
     	padding: 10px 20px;
     	margin: 0;
@@ -68,23 +65,29 @@
 
     .sort_by ul li a.selected { color: white; }
 
-    .what { 
+    .what {
     	color: #727272;
 	    display: block;
-    	width: 190px;
+    	width: 500px;
     	padding: 20px;
     	margin-bottom: 20px;
     	background-color: #f7f7f7;
+      margin-top: -20px;
+      height: 75px;
+      position: absolute;
+      left: 570px;
     }
-    
+
     .what p { margin: 0 0 10px 0; }
-    
-    .what a { 
+
+    .what a {
       text-decoration: none;
       color: #05aab7;
       font-size: 12px;
       padding-bottom: 10px;
- }
+    }
+
+    .what_head { font-size: 18px; font-weight: bold; color: #8ac23f;}
 
     .sorts
     {
@@ -111,13 +114,15 @@
     	margin: 0;
     	text-decoration: none;
     	color: #727272;
+      background-color: #f7f7f7;
+      border-top: 2px solid white;
     }
 
     .sorts ul li a:hover { background-color: #e4f5f5; }
 
     .sorts ul li a.selected { color: white; }
 
-    .sorts ul li a.selected:hover { color: #727272; }
+    .sorts ul li a.selected:hover { background-color: #e4f5f5 !important; color: #727272; }
 
     .instructions a { color: #05aab7; text-decoration: none;}
 
@@ -230,7 +235,7 @@
       z-index: 2;
     }
 
-    .selected { background-color: #05aab7; }
+    .selected { background-color: #05aab7 !important;  }
 
     .selected a { color: white; }
       

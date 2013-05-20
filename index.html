@@ -11,8 +11,8 @@
   <header>
   	<div class="title">
   		<div class="the">The</div>
-  		<h1>EduPunks&#8217; <span style="color:#fcb538;">Atlas</span></h1>
-  		<div class="subtitle">of lifelong learning</div>
+  		<a href="index.html"><h1>EduPunks&#8217; <span style="color:#fcb538;">Atlas</span></h1>
+  		<div class="subtitle">of lifelong learning</a></div>
   	</div>
 
     <div class="what">
@@ -20,42 +20,65 @@
       <a href="about.html">Learn More</a>
     </div>
 
-    <div class="clear"></div>
+    <div class="key" id="key_roll">
+      <p style="width: 80px;"><span class="what_head">Key</span>
+      <span class="what_head" style="font-size: 12px; color: gray; font-weight: 200;">Each block represents an educational opportunity. </span></p>
+      <div class="box c online">
+        <div class="type online" id="type_roll">online</div>
+        <div class="level 6" id="level_roll">6</div>
+        <div class="abbreviation" id><p>TED</p></div>
+        <div class="name">TED</div>
+        <div class="threes" id="threes_roll">c</div>
+      </div>
+    </div>
 
+    <div class="clear"></div>
   </header>
 
 
 
   <div class="sorts">
 
-    <div id="sort_by">
-      <div class="option-set" data-option-key="sortBy">
-        <h4>Sort by</h4>
-        <ul id="sort-by">
-          <li><a href="#sortBy=level" data-option-value="level" class="selected">level</a></li>
-          <li><a href="#sortBy=name" data-option-value="name">name</a></li>
-        </ul>
-      </div>
+    <div class="list_top">
+      <p>
+        You are viewing <span id="course_type" class="viewing">all</span> <span id="business_type" class="viewing">non-profit</span> courses sorted by <span id="sort_type" class="viewing">level</span>.
+      </p>
     </div>
 
     <div id="filter_by">
       <div class="option-combo color">
-        <h4>Course Type</h4>
-        <ul class="filter option-set clearfix " data-filter-group="type">
-          <li><a href="#filter-type-any" data-filter-value="" class="selected">any</a></li>
-          <li><a href="#filter-type-online" data-filter-value=".online">online</a></li>
-          <li><a href="#filter-type-offline" data-filter-value=".offline">offline</a></li>
-          <li><a href="#filter-type-hybrid" data-filter-value=".hybrid">hybrid</a></li>
-        </ul>
+        <h3>Course Type <span>&#x25BC;</span></h3>
+        <div id="course_type_slide">
+          <ul class="filter option-set clearfix " data-filter-group="type">
+            <li><a href="#filter-type-any" data-filter-value="" class="selected">all</a></li>
+            <li><a href="#filter-type-online" data-filter-value=".online">online</a></li>
+            <li><a href="#filter-type-offline" data-filter-value=".offline">offline</a></li>
+            <li><a href="#filter-type-hybrid" data-filter-value=".hybrid">hybrid</a></li>
+          </ul>
+        </div>
       </div>
 
       <div class="option-combo size">
-        <h4>Business Model</h4>
-        <ul class="filter option-set clearfix " data-filter-group="size">
-          <li><a href="#filter-biz-any" data-filter-value="" class="selected">any</a></li>
-          <li><a href="#filter-biz-NFP" data-filter-value=".NFP">not for profit</a></li>
-          <li><a href="#filter-biz-FP" data-filter-value=".FP">for profit</a></li>
-        </ul>
+        <h3>Business Model <span>&#x25B2;</span></h3>
+        <div id="biz_model_slide">
+          <ul class="filter option-set clearfix " data-filter-group="size">
+            <li><a href="#filter-biz-any" data-filter-value="" class="selected">all</a></li>
+            <li><a href="#filter-biz-NFP" data-filter-value=".NFP">not for profit</a></li>
+            <li><a href="#filter-biz-FP" data-filter-value=".FP">for profit</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="sort_by">
+      <div class="option-set" data-option-key="sortBy">
+        <h3>Sort by <span>&#x25B2;</span></h3>
+        <div id="sort_model_slide">
+          <ul id="sort-by">
+            <li><a href="#sortBy=name" data-option-value="name" class="selected">name</a></li>
+            <li><a href="#sortBy=level" data-option-value="level">level</a></li>
+          </ul>
+        </div>
       </div>
     </div>
 

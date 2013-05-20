@@ -115,7 +115,40 @@ function showDesc(){
 }
 
 $(function() {
-   $( "#accordion" ).accordion();
- });
+  $( "#accordion" ).accordion({
+    heightStyle: "content"
+  });
+});
 
+$('.option-combo.color h3').click(function () {
+  if ($("#course_type_slide").is(":hidden")) {
+    $("#course_type_slide").slideDown("slow");
+    $(".option-combo.color h3 span").text("▼");
+  }
+  else {
+    $("#course_type_slide").slideUp();
+    $(".option-combo.color h3 span").text("▲");
+  }
+});
 
+$('.option-combo.size h3').click(function () {
+  if ($("#biz_model_slide").is(":hidden")) {
+    $("#biz_model_slide").slideDown("slow");
+    $(".option-combo.size h3 span").text("▼");
+  }
+  else {
+    $("#biz_model_slide").slideUp();
+    $(".option-combo.size h3 span").text("▲");
+  }
+});
+
+$('#sort_by h3').click(function () {
+  if ($("#sort_model_slide").is(":hidden")) {
+    $("#sort_model_slide").slideDown("slow");
+    $("#sort_by h3 span").text("▼");
+  }
+  else {
+    $("#sort_model_slide").slideUp();
+    $("#sort_by h3 span").text("▲");
+  }
+});

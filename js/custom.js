@@ -152,3 +152,48 @@ $('#sort_by h3').click(function () {
     $("#sort_by h3 span").text("▲");
   }
 });
+
+d3.select("#size_roll")
+  .on("mouseover", function(d){
+    d3.select("#box_hover")
+      .transition()
+      .style("background-color", "#f45c00");
+    d3.select("#size_tooltip")
+      .style("left", (d3.event.pageX) - 200 + "px")
+      .style("top", (d3.event.pageY) + "px")
+      .transition()
+      .style("opacity", 1);
+      })
+
+  .on("mouseout", function(){
+    d3.select("#box_hover")
+      .transition()
+      .style("background-color", "#fcb538");
+    d3.select("#size_tooltip")
+      .transition()
+      .style("opacity", 0);
+  });
+
+  d3.select("#level_roll")
+    .on("mouseover", function(d){
+      d3.select("#box_hover")
+        .transition()
+        .style("background-color", "#f45c00");
+      d3.select("#level_tooltip")
+        .style("left", (d3.event.pageX) - 200 + "px")
+        .style("top", (d3.event.pageY) + "px")
+        .transition()
+        .style("opacity", 1);
+        })
+
+    .on("mouseout", function(){
+      d3.select("#box_hover")
+        .transition()
+        .style("background-color", "#fcb538");
+      d3.select("#level_tooltip")
+        .transition()
+        .style("opacity", 0);
+    });
+
+
+

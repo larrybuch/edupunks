@@ -5,7 +5,8 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/tooltipster.css" type="text/css">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0;" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
 
 </head>
@@ -24,15 +25,32 @@
 	    <div class="key" id="key_roll">
 	      <p style="width: 80px;"><span class="what_head">Key</span>
 	      <span class="what_head" style="font-size: 12px; color: gray; font-weight: 200;">Each block represents an educational opportunity. </span></p>
-	      <div class="box c online">
+	      <div class="box_key c online" id="box_hover">
 	        <div class="type online" id="type_roll">online</div>
 	        <div class="level 6" id="level_roll">6</div>
-	        <div class="abbreviation" id><p>TED</p></div>
+	        <div class="abbreviation" id="size_roll"><p>TED</p></div>
 	        <div class="name">TED</div>
 	        <div class="threes" id="threes_roll">c</div>
 	      </div>
 	    </div>
 	  </div>
+    <div class="key_tooltip" id="size_tooltip">
+      <span class="kicker_tooltip">Size of square</span>
+      <div class="title_tooltip">Benefit Mix</div>
+      <p class="text_tooltip">The <strong>size</strong> of each square reflects the benefit mix it offers.
+      Higher education organizations in the age of unbundling can provide content, socialization, assessment, any two or all three of the above.</p>
+      <p class="text_tooltip"><strong>For Example:</strong> Content-Socialization-Assessment (ASU Online); Content (Open Courseware); Content-Socialization (MOOC); Socialization (OpenStudy, CityYear); Socialization-Accreditation (Github); Assessment (LearningCounts.org).
+      </p>
+    </div>
+    <div class="clear"></div>
+    <div class="key_tooltip" id="level_tooltip">
+      <span class="kicker_tooltip">Number</span>
+      <div class="title_tooltip">Audience</div>
+      <p class="text_tooltip">The intended or potential audience for an innovation can be very narrow or very broad. It’s represented here by a <strong>single number</strong> (1-Elite to 10-Mass.)</p>
+
+      <p class="text_tooltip"><strong>For Example</strong>, Dev Bootcamp, a startup that costs thousands of dollars and is directed at Silicon Valley computer scientists with bachelor’s or advanced degrees, would rate a 1, while Khan Academy, accessible to elementary school students for free, would rate a 10.
+      </p>
+    </div>
     <div class="clear"></div>
   </header>
 
@@ -41,8 +59,11 @@
   <div class="sorts">
 
     <div class="list_top">
-      <p>
+<!--       <p>
         You are viewing <span id="course_type" class="viewing">all</span> <span id="business_type" class="viewing">non-profit</span> courses sorted by <span id="sort_type" class="viewing">level</span>.
+      </p> -->
+      <p>
+        Each organization in the map is listed by name, URL, and online/ offline/ hybrid. They are <strong>sortable</strong> by the following attributes:
       </p>
     </div>
 

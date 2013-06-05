@@ -1,6 +1,6 @@
 var courses;
 window.onload = function() { init(); };
-var public_spreadsheet_url = "https://docs.google.com/spreadsheet/pub?key=0ApL2ZVhpOmONdFdrY3QzNkx3eWU5Z2F3cmJLUUJEQ1E&output=html";
+var public_spreadsheet_url = "https://docs.google.com/spreadsheet/pub?key=0AjAhezWghPPEdFltbDJVQ3NFb1FmbmFZVFZJeTJpRlE&output=html";
 
 function init() {
   Tabletop.init({
@@ -17,7 +17,7 @@ function showInfo(data, tabletop) {
         "<div class= \"type " + courses[i].type + "\">" + courses[i].type + "</div>" +
         "<div class = \"level " + courses[i].level + "\">" + courses[i].level + "</div>" +
         "<div class='abbreviation'> <p>" + courses[i].abbreviation + "</p> </div>" +
-        "<div class='name'> <a href='" + courses[i].url + "' target=?blank>" + courses[i].name + "</a> </div>" +
+        "<div class='name'> <a href='" + courses[i].url + "' target=_blank>" + courses[i].name + "</a> </div>" +
         "<div class=\"threes\">" + courses[i].csa + "</div>" +
         "<div class=\"hidden" + courses[i].risk + "</div>" +
         "</div>"
